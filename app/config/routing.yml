@@ -1,0 +1,5 @@
+
+_app_blog_default:
+    resource: "@AppBlogBundle/Controller/DefaultController.php"
+    type:     annotation
+
