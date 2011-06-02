@@ -20,14 +20,15 @@
 			<div class="bar">
 				<h1>Categories</h1>
 				<ul>
-					<li><a href="index.html">PHP</a></li>
-					<li><a href="index.html">Symfony</a></li>
-					<li><a href="index.html">JavaScript</a></li>
-					<li><a href="index.html">CSS</a></li>
+					<li><a href="">PHP</a></li>
+					<li><a href="">Symfony</a></li>
+					<li><a href="">JavaScript</a></li>
+					<li><a href="">CSS</a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="footer"></div>
+		<div class="clearer"><span></span></div>
+		<div class="footer">Site developped with <a href="http://www.symfony.com" target="blank">Symfony2</a></div>
 	</div>
 </body>
 </html>

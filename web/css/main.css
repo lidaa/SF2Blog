@@ -21,7 +21,6 @@ a:hover {color: #9A6;}
 body {
 	background: #5F8000 url(../img/bg.gif) repeat-y center top;
 	color: #333;
-	font: normal 62.5% "Lucida Sans Unicode",sans-serif;
 }
 input {
 	color: #555;
@@ -52,25 +51,25 @@ h1,h2,h3 {color: #654;}
 
 /* structure */
 .container {
-	background: url(../img/bgcontainer.gif) repeat-y;
 	margin: 0 auto;
-	width: 630px;
+	width: 765px;
 }
 
 /* head */
 .menu{
 	background: #567300;
-	font: normal 2.4em Verdana,sans-serif;
-	height: 60px;
-	margin: 0 auto;
-	width: 630px;
+	font: normal 32px Georgia;
+    height: 40px;
+    margin: 0 auto;
+    width: 758px;
+	text-align: right;
 }
 .menu a {
-	color: #FFF;
-	display: block;
-	line-height: 60px;
+	color: #E8F6BF;
+	line-height: 40px;
 	text-decoration: none;
 	width: 100%;
+	margin-right: 15px; 
 }
 .menu span {padding-left: 24px;}
 .menu a:hover {
@@ -87,38 +86,31 @@ h1,h2,h3 {color: #654;}
 	width: 630px;
 }
 
-/* item */
-.item {clear: both;}
-.item .date {
-	background: url(../img/bgdate.gif) no-repeat;
-	color: #FFF;
-	float: left;
-	height: 40px;
-	text-align: center;
-	width: 36px;
-}
-.item .date div {padding-top: 4px;}
-.item .date span {font: normal 1.6em serif;}
-.item .content {
-	float: left;
-	width: 420px;
-}
-.item h1 {
+
+.post_title {
 	background: #567300;
 	color: #FFF;
 	line-height: 40px;
 	padding-left: 16px;
 }
-.item .body {padding: 12px 18px;}
+
+.post_content{
+padding: 4px;
+}
+/* main */
+.content {float: left; width: 549px;}
 
 /* main */
-.body {float: left;}
+.main {height:auto; width:100%}
+
 
 /* navigation */
 .bar {
-	float: right;
-	margin-left: 1px;
-	width: 208px;
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 1px;
+    width: 208px;
 }
 .bar h1 {
 	background: #81AC00;
@@ -148,12 +140,13 @@ h1,h2,h3 {color: #654;}
 .footer {
 	background: url(../img/bgfooter.gif) repeat-x;
 	color: #FFF;
-	font-size: 1.1em;
-	line-height: 40px;
-	margin: 0 auto;
+	font-size: 0.8em;
+	line-height: 20px;
+	margin: 20px auto 0;
 	width: 626px;
+	text-align: center; 
 }
-.footer a {color: #FFF;}
+.footer a {color: #FFF; text-decoration:none;}
 .footer a:hover {color: #FAFCB0;}
 .footer .left, .footer .right {padding: 0 12px;}
 .footer .right, .footer .right a {text-decoration: none; color: #DEC;}
