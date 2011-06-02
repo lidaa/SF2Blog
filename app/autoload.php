@@ -13,7 +13,6 @@ $loader->registerNamespaces(array(
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
-    'Acme'             => __DIR__.'/../src',
     'App'              => __DIR__.'/../src',
 ));
 $loader->registerPrefixes(array(
