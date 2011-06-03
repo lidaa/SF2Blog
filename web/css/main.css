@@ -59,7 +59,7 @@ h1,h2,h3 {color: #654;}
 .menu{
 	background: #567300;
 	font: normal 32px Georgia;
-    height: 40px;
+    height: 23px;
     margin: 0 auto;
     width: 758px;
 	text-align: right;
@@ -69,11 +69,11 @@ h1,h2,h3 {color: #654;}
 	line-height: 40px;
 	text-decoration: none;
 	width: 100%;
-	margin-right: 15px; 
+	margin-right: 65px; 
 }
-.menu span {padding-left: 24px;}
+.menu span {padding: 10px;}
 .menu a:hover {
-	background: #688B00;
+	background: #567300;
 	color: #FFF;
 }
 
@@ -86,19 +86,39 @@ h1,h2,h3 {color: #654;}
 	width: 630px;
 }
 
-
-.post_title {
+/* post */
+.post_title_date {
 	background: #567300;
 	color: #FFF;
-	line-height: 40px;
-	padding-left: 16px;
+	padding-left: 0px;
+	width: 100%;
+}
+.post_title {
+    background: none repeat scroll 0 0 #567300;
+    float: left;
+    height: 21px;
+    padding: 4px;
+    width: 80%;
+}
+.post_date {
+    background: none repeat scroll 0 0 #81AC00;
+    border-color: window;
+    border-style: solid;
+    border-width: 1px;
+    color: #000000;
+    float: left;
+    font-size: small;
+    height: 15px;
+    padding: 2px;
+    width: 89px;
+}
+.post_content{
+	padding: 10px;
+	clear: both; 
 }
 
-.post_content{
-padding: 4px;
-}
 /* main */
-.content {float: left; width: 549px;}
+.content {float: left; width: 600px;}
 
 /* main */
 .main {height:auto; width:100%}
@@ -110,7 +130,7 @@ padding: 4px;
     font-size: 12px;
     font-style: italic;
     margin-left: 1px;
-    width: 208px;
+    width: 160px;
 }
 .bar h1 {
 	background: #81AC00;
