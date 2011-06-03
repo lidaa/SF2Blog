@@ -39,8 +39,7 @@ class DateHelper extends Helper
                 // IntlDateFormatter::SHORT
             // );
         // }
-        // for compatibility with PHP 5.3.3
-        //$date = $date->getTimestamp();
+
         return $this->dateFormatter->format($date);
 	}
 

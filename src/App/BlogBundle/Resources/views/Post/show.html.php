@@ -1,3 +1,7 @@
+<?php $view->extend('AppBaseBundle::layout.html.php'); ?>
+
+<?php $view['slots']->start('content'); ?> 
+
 <div class="post">
 	<div class="post_title_date">
 		<div class="post_date">
@@ -10,7 +14,9 @@
 
 	<div class="post_content">
 	<?php
-		echo substr($post->getContent(), 1, 300).' ...' ;
+		echo $post->getContent();
 	?>
 	</div>
 </div>
+
+<?php $view['slots']->stop(); ?>
