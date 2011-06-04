@@ -11,6 +11,7 @@
     <services>
         <service id="templating.helper.date" class="%templating.helper.date.class%">
             <tag name="templating.helper" alias="date" />
+            <argument type="service" id="service_container" />
         </service>
     </services>
 </container>

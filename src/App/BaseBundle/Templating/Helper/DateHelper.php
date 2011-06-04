@@ -20,9 +20,9 @@ class DateHelper extends Helper
 	*
 	* @param Router $router A Router instance
 	*/
-    public function __construct()
+    public function __construct(ContainerInterface $container)
     {
-        //$this->container = $container;
+        $this->container = $container;
     }
 
 	public function format($date, $format = null)
@@ -32,15 +32,17 @@ class DateHelper extends Helper
         if ($format) {
             return $date->format($format);
         }
-        // if (null === $this->dateFormatter) {
-            // $this->dateFormatter = new \IntlDateFormatter(
-                // $this->container->get('session')->getLocale(),
-                // IntlDateFormatter::MEDIUM,
-                // IntlDateFormatter::SHORT
-            // );
-        // }
-
-        return $this->dateFormatter->format($date);
+        if (null === $this->dateFormatter) {
+            $this->dateFormatter = new \IntlDateFormatter(
+                $this->container->get('session')->getLocale(),
+                \IntlDateFormatter::MEDIUM,
+                \IntlDateFormatter::SHORT
+            );
+        }
+		// for compatibility with PHP 5.3.3
+        $date = $date->getTimestamp();
+		$the_date = $this->dateFormatter->format($date);
+        return $the_date;
 	}
 
 	/**

@@ -15,6 +15,7 @@ class PostController extends Controller
 	*/
     public function showAction($id) 
 	{
+		 
 		$post = $this->getEm()->find('AppBlogBundle:Posts', $id);
         return $this->render('AppBlogBundle:Post:show.html.php', array('post' => $post));
     }

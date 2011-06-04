@@ -101,7 +101,7 @@ h1,h2,h3 {color: #654;}
     float: left;
     margin-top: 1px;
     padding-left: 8px;
-    width: 80%;
+    width: 78%;
 }
 
 .post_title  a{
@@ -118,7 +118,6 @@ h1,h2,h3 {color: #654;}
     float: left;
     font-size: small;
     padding: 3px;
-    width: 89px;
 }
 .post_content{
 	padding: 10px;
@@ -157,11 +156,11 @@ h1,h2,h3 {color: #654;}
 	background: #E8F6BF url(../img/bgnavigation.gif) repeat-x;	
 	color: #553;
 	display: block;
-	padding: 8px 4px 8px 12px;
+	padding: 4px 4px 4px 12px;
 	text-decoration: none;
 }
 .bar li a:hover {
-	background: #F0FFC6;
+	background: #FFF;
 	color: #553;
 }
 

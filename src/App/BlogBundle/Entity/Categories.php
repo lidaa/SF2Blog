@@ -42,7 +42,12 @@ class Categories
      */
     private $createdAt;
 
-
+    /**
+     * @var $Posts
+     *
+     * @ORM\OneToMany(targetEntity="Posts", mappedBy="category")
+     */
+	private $posts;
 
     /**
      * Get id
@@ -113,4 +118,19 @@ class Categories
     {
         return $this->createdAt;
     }
+
+    /**
+     * Get posts
+     *
+     * @return datetime $createdAt
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+	public function __toString()
+	{
+		return $this->title;
+	}
 }
