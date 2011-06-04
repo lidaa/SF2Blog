@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<div class="menu">
-			<a href=""><span>Lidaa blog</span></a>
+			<a href="<?php echo $view['router']->generate('_home_index') ?>"><span>Lidaa blog</span></a>
 		</div>
 		<div class="header"></div>
 		<div class="main">
