@@ -7,16 +7,28 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
 
 class CategoryController extends Controller
 {
- 
+
+ 	/**
+	* @Route("/category/add",  name="_category_add")
+	* @Template()
+	*/  
     public function addAction() {
         return $this->render('AppBlogBundle:Category:add.html.php', array('' => ''));
     }
  
+ 	/**
+	* @Route("/category/{id}/edit",  name="_category_edit")
+	* @Template()
+	*/  
     public function editAction() {
         return $this->render('AppBlogBundle:Category:edit.html.php', array('' => ''));
     }
- 
-    public function allListAction() {
+
+ 	/**
+	* @Route("/all-categories",  name="_category_all")
+	* @Template()
+	*/ 
+    public function allAction() {
         return $this->render('AppBlogBundle:Category:list.html.php', array('' => ''));
     }
 
@@ -40,9 +52,13 @@ class CategoryController extends Controller
 		$category  = $this->getEm()->getRepository('AppBlogBundle:Categories')->findOneByTitle($title);
         return $this->render('AppBlogBundle:Category:select.html.php', array('posts' => $category->getPosts()));
     }
- 
-    public function deleteAction() {
-        return $this->render('AppBlogBundle:Category:delete.html.php', array('' => ''));
+
+ 	/**
+	* @Route("/category/delete/{id} ",  name="_category_delete")
+	* @Template()
+	*/ 
+    public function deleteAction($id) {
+        return $this->render('AppBlogBundle:Category:delete.html.php', array('id' => $id));
     }
 
 }
