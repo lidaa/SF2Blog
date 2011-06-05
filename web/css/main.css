@@ -105,11 +105,13 @@ h1,h2,h3 {color: #654;}
     margin-top: 1px;
     padding-left: 8px;
     width: 78%;
+	color: #668822;
 }
 
-.post_title  a{
-	text-decoration: none;
-	color: #81AC00;
+.post_title a:hover {
+	color: #567300;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 .post_date {
@@ -189,7 +191,6 @@ h1,h2,h3 {color: #654;}
 /* messages  */
 .msg_info, .msg_success, .msg_warning, .msg_error, .msg_validation {
     border: 1px solid;
-    margin: 10px 0px;
     padding:15px 10px 15px 50px;
     background-repeat: no-repeat;
     background-position: 10px center;

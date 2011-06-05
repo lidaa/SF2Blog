@@ -4,7 +4,10 @@
 			<?php echo $view['date']->format($post->getCreatedAt(), 'd-m-Y H:i'); ?>
 		</div>
 		<div class="post_title">
-<a href="<?php echo $view['router']->generate('_post_show', array('id' => $post->getId())); ?>"> <?php echo $post->getTitle(); ?></a>
+			<?php echo $post->getCategory(); ?> &raquo;  
+			<a href="<?php echo $view['router']->generate('_post_show', array('id' => $post->getId())); ?>">
+				<?php echo $post->getTitle(); ?>
+			</a>
 		</div>
 	</div>
 
