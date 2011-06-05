@@ -9,10 +9,11 @@
 </head>
 <body>
 	<div class="container">
-		<div class="menu">
+		<div class="top">
 			<a href="<?php echo $view['router']->generate('_home_index') ?>"><span>Lidaa blog</span></a>
 		</div>
 		<div class="header"></div>
+		<div class="clearer"><span></span></div>
 		<div class="main">
 			<div class="content">
 				<?php $view['slots']->output('content') ?>

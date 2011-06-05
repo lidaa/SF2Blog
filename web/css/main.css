@@ -47,7 +47,10 @@ blockquote p {padding: 3px 0;}
 h1,h2,h3 {color: #654;}
 
 /* misc */
-.clearer {clear: both;}
+.clearer {
+	clear: both;
+	height: 30px;
+}
 
 /* structure */
 .container {
@@ -57,7 +60,7 @@ h1,h2,h3 {color: #654;}
 }
 
 /* head */
-.menu{
+.top{
 	background: #567300;
 	font: normal 32px Georgia;
     height: 23px;
@@ -65,15 +68,15 @@ h1,h2,h3 {color: #654;}
     width: 758px;
 	text-align: right;
 }
-.menu a {
+.top a {
 	color: #E8F6BF;
 	line-height: 40px;
 	text-decoration: none;
 	width: 100%;
 	margin-right: 65px; 
 }
-.menu span {padding: 10px;}
-.menu a:hover {
+.top span {padding: 10px;}
+.top a:hover {
 	background: #567300;
 	color: #FFF;
 }
