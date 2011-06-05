@@ -16,8 +16,20 @@ class CategoryController extends Controller
         return $this->render('AppBlogBundle:Category:edit.html.php', array('' => ''));
     }
  
-    public function listAction() {
+    public function allListAction() {
         return $this->render('AppBlogBundle:Category:list.html.php', array('' => ''));
+    }
+
+	/**
+	* @Route("/list-categories",  name="_category_list")
+	* @Template()
+	*/ 
+    public function listAction() {
+		$categories = $this->getEm()
+					  ->createQuery('SELECT c FROM AppBlogBundle:Categories c WHERE c.showed = 1')
+					  ->execute();
+        return $this->render('AppBlogBundle:Category:list.html.php', array('categories' => $categories));
+
     }
 
 	/**

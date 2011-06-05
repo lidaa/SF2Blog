@@ -10,6 +10,18 @@ class PostController extends Controller
 {
 
 	/**
+	* @Route("/post-recent", name="_post_recent")
+	* @Template()
+	*/
+    public function recentAction() 
+	{
+		$posts = $this->getEm()
+					  ->createQuery('SELECT p FROM AppBlogBundle:Posts p ORDER BY p.createdAt DESC')
+					  ->execute();
+        return $this->render('AppBlogBundle:Post:recent.html.php', array('posts' => $posts));
+    }
+
+	/**
 	* @Route("/post/{id}", name="_post_show")
 	* @Template()
 	*/

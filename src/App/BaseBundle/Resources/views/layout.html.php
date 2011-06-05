@@ -18,29 +18,7 @@
 				<?php $view['slots']->output('content') ?>
 			</div>
 			<div class="bar">
-				<h1>Categories</h1>
-				<ul>
-				<li>
-				<a href="<?php echo $view['router']->generate('_category_select', array('title'=>'PHP')) ?>">
-				PHP
-				</a>
-				</li>
-				<li>
-				<a href="<?php echo $view['router']->generate('_category_select', array('title'=>'Symfony')) ?>">
-				Symfony
-				</a>
-				</li>
-				<li>
-				<a href="<?php echo $view['router']->generate('_category_select', array('title'=>'JavaScript')) ?>">
-				JavaScript
-				</a>
-				</li>
-				<li>						
-				<a href="<?php echo $view['router']->generate('_category_select', array('title'=>'CSS')) ?>">
-				CSS
-				</a>
-				</li>
-				</ul>
+				<?php echo $view->render('AppBaseBundle::sidebar.html.php') ?>
 			</div>
 		</div>
 		<div class="clearer"><span></span></div>
