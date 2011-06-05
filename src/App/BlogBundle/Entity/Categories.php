@@ -50,6 +50,13 @@ class Categories
 	private $posts;
 
     /**
+     * @var $blogrolls
+     *
+     * @ORM\OneToMany(targetEntity="Blogroll", mappedBy="category")
+     */
+	private $blogrolls;
+
+    /**
      * Get id
      *
      * @return integer $id
@@ -127,6 +134,16 @@ class Categories
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * Get blogrolls
+     *
+     * @return Collection $blogrolls
+     */
+    public function getBlogrolls()
+    {
+        return $this->blogrolls;
     }
 
 	public function __toString()

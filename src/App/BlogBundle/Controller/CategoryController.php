@@ -50,7 +50,7 @@ class CategoryController extends Controller
 	*/ 
     public function selectAction($title) {
 		$category  = $this->getEm()->getRepository('AppBlogBundle:Categories')->findOneByTitle($title);
-        return $this->render('AppBlogBundle:Category:select.html.php', array('posts' => $category->getPosts()));
+        return $this->render('AppBlogBundle:Category:select.html.php', array('posts' => $category->getPosts(), 'category' => $category));
     }
 
  	/**
