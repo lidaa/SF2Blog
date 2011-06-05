@@ -17,6 +17,7 @@ class PostController extends Controller
 	{
 		$posts = $this->getEm()
 					  ->createQuery('SELECT p FROM AppBlogBundle:Posts p ORDER BY p.createdAt DESC')
+					  ->setMaxResults(4)	
 					  ->execute();
         return $this->render('AppBlogBundle:Post:recent.html.php', array('posts' => $posts));
     }
