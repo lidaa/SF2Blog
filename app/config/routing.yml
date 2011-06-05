@@ -11,3 +11,6 @@ _app_blog_category:
     resource: "@AppBlogBundle/Controller/CategoryController.php"
     type:     annotation
 
+_app_blog_blogroll:
+    resource: "@AppBlogBundle/Controller/BlogrollController.php"
+    type:     annotation
