@@ -1,5 +1,3 @@
-3
-
 Symfony 2 Blog
 ========================
 
@@ -37,4 +35,23 @@ If you want to use the CLI, a console application is available at
 ``app/console``. Check first that your PHP is correctly configured for the CLI
 by running ``app/check.php``.
 
+Run
+-------------
+
+permission
+
+    sudo chmod -R 777 app/cache
+    sudo chmod -R 777 app/logs
+
+Create database and tables
+
+    php app/console doctrine:database:drop --force
+    php app/console doctrine:database:create
+    php app/console doctrine:schema:create
+
+Load data fixtures
+
+    php app/console doctrine:fixtures:load
+
+Fin.
 Enjoy!
