@@ -5,18 +5,44 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
+        
         <parameter key="admin.category.class">App\BlogBundle\Admin\CategoryAdmin</parameter>
-        <parameter key="admin.category.code">null</parameter>
         <parameter key="admin.category.entity">App\BlogBundle\Entity\Categories</parameter>
         <parameter key="admin.category.controller">AppBlogBundle:CategoryAdmin</parameter>
+        
+        <parameter key="admin.post.class">App\BlogBundle\Admin\PostAdmin</parameter>
+        <parameter key="admin.post.entity">App\BlogBundle\Entity\Posts</parameter>
+        <parameter key="admin.post.controller">AppBlogBundle:PostAdmin</parameter>  
+        
+        <parameter key="admin.user.class">App\BlogBundle\Admin\UserAdmin</parameter>
+        <parameter key="admin.user.entity">App\BlogBundle\Entity\Users</parameter>
+        <parameter key="admin.user.controller">AppBlogBundle:UserAdmin</parameter> 
+        
     </parameters>
 
     <services>
+        
         <service id="admin.category" class="%admin.category.class%">
             <tag name="sonata.admin" manager_type="orm" group="Blog" label="category" />
-            <argument>%admin.category.code%</argument>
+            <argument>null</argument>
             <argument>%admin.category.entity%</argument>
             <argument>%admin.category.controller%</argument>            
         </service>
+        
+        <service id="admin.post" class="%admin.post.class%">
+            <tag name="sonata.admin" manager_type="orm" group="Blog" label="post" />
+            <argument>null</argument>
+            <argument>%admin.post.entity%</argument>
+            <argument>%admin.post.controller%</argument>            
+        </service>
+        
+        <service id="admin.user" class="%admin.user.class%">
+            <tag name="sonata.admin" manager_type="orm" group="Blog" label="user" />
+            <argument>null</argument>
+            <argument>%admin.user.entity%</argument>
+            <argument>%admin.user.controller%</argument>            
+        </service>
+        
     </services>
+
 </container>
