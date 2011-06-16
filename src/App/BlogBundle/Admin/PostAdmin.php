@@ -6,8 +6,6 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 
 class PostAdmin extends Admin
 {
-
-
     protected $list = array(
         'title' => array('identifier' => true),
         'author',
