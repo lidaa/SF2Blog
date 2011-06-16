@@ -10,17 +10,17 @@ class UserAdmin extends Admin
     protected $list = array(
         'email' => array('identifier' => true),
         'username',
-        'password',
         'fullName',
         'webSite',
         'lastConnection',
         'enabled',
-        'token',
         'banished',
-        'numberVisits',
-        'infos',
-        'createdAt',
-        'updatedAt',
+        '_action' => array(
+            'actions' => array(
+                'edit' => array(),
+                'delete' => array()
+            )  
+        )
     );
 
     protected $maxPerPage = 5;

@@ -8,15 +8,20 @@ class PostAdmin extends Admin
 {
     protected $list = array(
         'title' => array('identifier' => true),
-        'author',
-        'enabled',
-        'commentsEnabled',
+        'numberVivits',
+        'opened',
+        '_action' => array(
+            'actions' => array(
+                'delete' => array(),
+                'edit' => array(),
+            )
+        ),
     );
 
     protected $filter = array(
         'title',
-        'author',
-        'enabled',
+        'opened',
+        'numberVivits',
     );
 }
 

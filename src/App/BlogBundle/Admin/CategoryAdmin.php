@@ -10,6 +10,12 @@ class CategoryAdmin extends Admin
     protected $list = array(
         'title' => array('identifier' => true),
         'showed',
+        '_action' => array(
+            'actions' => array(
+                'delete' => array(),
+                'edit' => array(),
+            )
+        ),
     );
 
     protected $form = array(
