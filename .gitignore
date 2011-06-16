@@ -1,5 +1,6 @@
 vendor
-app/cache
-app/logs
+app/cache/*
+app/logs/*
 src/delete
 /nbproject/private/
+web/bundles/*

@@ -69,4 +69,4 @@
 
 [MenuBundle]
     git=http://github.com/sonata-project/MenuBundle.git
-    target=/bundles/Knplabs/bundle/MenuBundle
+    target=/bundles/Knplabs/Bundle/MenuBundle
