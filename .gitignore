@@ -4,3 +4,4 @@ app/logs/*
 src/delete
 /nbproject/private/
 web/bundles/*
+app/bootstrap*

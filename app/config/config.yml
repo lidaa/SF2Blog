@@ -14,14 +14,6 @@ framework:
         default_locale: %locale%
         auto_start:     true
 
-# Services
-services:
-   sf_tuts.jobeet.admin.category:
-      class: App\BlogBundle\Admin\CategoryAdmin
-      tags:
-        - { name: sonata.admin, manager_type: orm, group: Blog, label: category }
-      arguments: [null, App\BlogBundle\Entity\Categories, AppBlogBundle:CategoryAdmin]
-
 # Twig Configuration
 twig:
     debug:            %kernel.debug%

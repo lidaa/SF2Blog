@@ -7,5 +7,19 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 
 class CategoryAdmin extends Admin
 {
+    protected $list = array(
+        'title' => array('identifier' => true),
+        'showed',
+    );
+
+    protected $form = array(
+        'id',
+        'title',
+        'showed'
+    );
+
+    protected $filter = array(
+        'title'
+    );
 }
 
