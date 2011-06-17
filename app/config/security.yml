@@ -7,10 +7,8 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            users:
-                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        fos_userbundle:
+            id: fos_user.user_manager
 
     firewalls:
         profiler:
@@ -21,21 +19,13 @@ security:
             pattern:  ^/_wdt
             security: false
 
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
+#        login:
+#            pattern:  ^/login
+#            security: false
 
-        secured_area:
-            pattern:    ^/demo/secured/
+        main:
             form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
-            logout:
-                path:   /demo/secured/logout
-                target: /demo/
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+                provider: fos_userbundle
 
     access_control:
         #- { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

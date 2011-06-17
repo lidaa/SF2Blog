@@ -11,8 +11,8 @@ class UserAdmin extends Admin
         'email' => array('identifier' => true),
         'username',
         'fullName',
-        'webSite',
         'lastConnection',
+        'numberVisits',
         'enabled',
         'banished',
         '_action' => array(
@@ -23,7 +23,7 @@ class UserAdmin extends Admin
         )
     );
 
-    protected $maxPerPage = 5;
+    protected $maxPerPage = 15;
 
     protected $form = array(
         'email',
@@ -31,19 +31,12 @@ class UserAdmin extends Admin
         'password',
         'fullName',
         'webSite',
-        'lastConnection',
-        'enabled',
-        'token',
-        'banished',
-        'numberVisits',
         'infos',
-        'createdAt',
-        'updatedAt',
     );
 
     protected $filter = array(
+        'username',
         'enabled',
-        'token',
         'banished',
         'numberVisits',
     );

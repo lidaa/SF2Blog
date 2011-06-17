@@ -18,6 +18,12 @@ class PostAdmin extends Admin
         ),
     );
 
+    protected $form = array(
+        'title',
+        'content',
+        'opened'
+    );
+    
     protected $filter = array(
         'title',
         'opened',

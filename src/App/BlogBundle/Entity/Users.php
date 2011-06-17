@@ -3,6 +3,7 @@
 namespace App\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
  * App\BlogBundle\Entity\Users
@@ -10,37 +11,37 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users")
  * @ORM\Entity
  */
-class Users
+class Users extends BaseUser
 {
     /**
      * @var integer $id
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string $username
      *
      * @ORM\Column(name="username", type="string", length=20, nullable=true)
      */
-    private $username;
+//    protected $username;
 
     /**
      * @var string $password
      *
      * @ORM\Column(name="password", type="string", length=300, nullable=true)
      */
-    private $password;
+//    protected $password;
 
     /**
      * @var string $email
      *
      * @ORM\Column(name="email", type="string", length=100, nullable=true)
      */
-    private $email;
+//    protected $email;
 
     /**
      * @var string $fullName
@@ -68,7 +69,7 @@ class Users
      *
      * @ORM\Column(name="enabled", type="boolean", nullable=true)
      */
-    private $enabled;
+//    protected $enabled;
 
     /**
      * @var text $token
@@ -103,16 +104,22 @@ class Users
      *
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
-    private $createdAt;
+//    protected $createdAt;
 
     /**
      * @var datetime $updatedAt
      *
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
-    private $updatedAt;
-
-
+//    protected $updatedAt;
+    
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /**
      * Get id
@@ -129,60 +136,60 @@ class Users
      *
      * @param string $username
      */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-    }
+//    public function setUsername($username)
+//    {
+//        $this->username = $username;
+//    }
 
     /**
      * Get username
      *
      * @return string $username
      */
-    public function getUsername()
-    {
-        return $this->username;
-    }
+//    public function getUsername()
+//    {
+//        return $this->username;
+//    }
 
     /**
      * Set password
      *
      * @param string $password
      */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
+//    public function setPassword($password)
+//    {
+//        $this->password = $password;
+//    }
 
     /**
      * Get password
      *
      * @return string $password
      */
-    public function getPassword()
-    {
-        return $this->password;
-    }
+//    public function getPassword()
+//    {
+//        return $this->password;
+//    }
 
     /**
      * Set email
      *
      * @param string $email
      */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
+//    public function setEmail($email)
+//    {
+//        $this->email = $email;
+//    }
 
     /**
      * Get email
      *
      * @return string $email
      */
-    public function getEmail()
-    {
-        return $this->email;
-    }
+//    public function getEmail()
+//    {
+//        return $this->email;
+//    }
 
     /**
      * Set fullName
@@ -249,20 +256,20 @@ class Users
      *
      * @param boolean $enabled
      */
-    public function setEnabled($enabled)
-    {
-        $this->enabled = $enabled;
-    }
+//    public function setEnabled($enabled)
+//    {
+//        $this->enabled = $enabled;
+//    }
 
     /**
      * Get enabled
      *
      * @return boolean $enabled
      */
-    public function getEnabled()
-    {
-        return $this->enabled;
-    }
+//    public function getEnabled()
+//    {
+//        return $this->enabled;
+//    }
 
     /**
      * Set token
@@ -349,38 +356,38 @@ class Users
      *
      * @param datetime $createdAt
      */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-    }
+//    public function setCreatedAt($createdAt)
+//    {
+//        $this->createdAt = $createdAt;
+//    }
 
     /**
      * Get createdAt
      *
      * @return datetime $createdAt
      */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
+//    public function getCreatedAt()
+//    {
+//        return $this->createdAt;
+//    }
 
     /**
      * Set updatedAt
      *
      * @param datetime $updatedAt
      */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
-    }
+//    public function setUpdatedAt($updatedAt)
+//    {
+//        $this->updatedAt = $updatedAt;
+//    }
 
     /**
      * Get updatedAt
      *
      * @return datetime $updatedAt
      */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
+//    public function getUpdatedAt()
+//    {
+//        return $this->updatedAt;
+//    }
 }

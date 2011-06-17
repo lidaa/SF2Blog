@@ -21,10 +21,13 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+            // Bundles used
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BluePrintBundle\SonataBluePrintBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            // My bundles
             new App\BlogBundle\AppBlogBundle(),
             new App\BaseBundle\AppBaseBundle(),
         );

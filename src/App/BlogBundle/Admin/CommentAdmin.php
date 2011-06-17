@@ -8,15 +8,22 @@ class CommentAdmin extends Admin
 {
 
     protected $list = array(
+        'user',
+        'post',
+        'content',
+        'createdAt'
     );
 
-    protected $maxPerPage = 5;
+    protected $maxPerPage = 20;
 
     protected $form = array(
+        'post',
+        'content'
     );
 
     protected $filter = array(
+        'user',
+        'post',
     );
-
-    
+ 
 }

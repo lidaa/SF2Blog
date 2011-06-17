@@ -64,7 +64,7 @@ abstract class Kernel implements KernelInterface
     protected $name;
     protected $startTime;
     protected $classes;
-    const VERSION = '2.0.0-BETA5-DEV';
+    const VERSION = '2.0.0-RC1-DEV';
     public function __construct($environment, $debug)
     {
         $this->environment = $environment;
