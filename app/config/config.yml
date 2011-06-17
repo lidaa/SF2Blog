@@ -3,7 +3,7 @@ imports:
     - { resource: security.yml }
 
 framework:
-    translator: { fallback: en }
+    translator: { fallback: fr }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -26,10 +26,6 @@ assetic:
     use_controller: false
     filters:
         cssrewrite: ~
-        # closure:
-        #     jar: %kernel.root_dir%/java/compiler.jar
-        # yui_css:
-        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
 
 # Doctrine Configuration
 doctrine:
@@ -56,7 +52,13 @@ jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
 
+# UserBundle Configuration
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: App\BlogBundle\Entity\Users
+    use_listener: true
+    service:
+        email_canonicalizer:    fos_user.util.email_canonicalizer.default
+        username_canonicalizer: fos_user.util.username_canonicalizer.default
+
