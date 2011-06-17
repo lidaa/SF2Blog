@@ -18,6 +18,14 @@
         <parameter key="admin.user.entity">App\BlogBundle\Entity\Users</parameter>
         <parameter key="admin.user.controller">AppBlogBundle:UserAdmin</parameter> 
         
+        <parameter key="admin.blogroll.class">App\BlogBundle\Admin\BlogrollAdmin</parameter>
+        <parameter key="admin.blogroll.entity">App\BlogBundle\Entity\Blogroll</parameter>
+        <parameter key="admin.blogroll.controller">AppBlogBundle:BlogrollAdmin</parameter> 
+ 
+        <parameter key="admin.comment.class">App\BlogBundle\Admin\CommentAdmin</parameter>
+        <parameter key="admin.comment.entity">App\BlogBundle\Entity\Comments</parameter>
+        <parameter key="admin.comment.controller">AppBlogBundle:CommentAdmin</parameter>
+            
     </parameters>
 
     <services>
@@ -41,6 +49,20 @@
             <argument>null</argument>
             <argument>%admin.user.entity%</argument>
             <argument>%admin.user.controller%</argument>            
+        </service>
+        
+        <service id="admin.blogroll" class="%admin.blogroll.class%">
+            <tag name="sonata.admin" manager_type="orm" group="Blog" label="blogroll" />
+            <argument>null</argument>
+            <argument>%admin.blogroll.entity%</argument>
+            <argument>%admin.blogroll.controller%</argument>            
+        </service>
+
+        <service id="admin.comment" class="%admin.comment.class%">
+            <tag name="sonata.admin" manager_type="orm" group="Blog" label="comment" />
+            <argument>null</argument>
+            <argument>%admin.comment.entity%</argument>
+            <argument>%admin.comment.controller%</argument>            
         </service>
         
     </services>
