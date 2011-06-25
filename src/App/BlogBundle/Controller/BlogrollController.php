@@ -18,9 +18,13 @@ class BlogrollController extends Controller
 		if($category == null)
 		{
 			$blogrolls = $this->getEm()
-			  ->createQuery('SELECT b FROM AppBlogBundle:Blogroll b')
+			  ->createQuery('SELECT b.id, b.link FROM AppBlogBundle:Blogroll b ORDER BY b.link')
+			  ->setMaxResults(4)
 			  ->execute();
-
+			
+			//print_r( $blogrolls );
+			//exit;
+			
 		}	
 		else
 		{

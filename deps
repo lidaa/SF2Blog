@@ -71,7 +71,3 @@
     git=http://github.com/sonata-project/MenuBundle.git
     target=/bundles/Knplabs/Bundle/MenuBundle
 
-[UserBundle]
-    git=http://github.com/FriendsOfSymfony/UserBundle.git
-    target=/bundles/FOS/UserBundle
-

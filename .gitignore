@@ -1,7 +1,7 @@
 vendor
 app/cache/*
 app/logs/*
-src/delete
-/nbproject/private/
+nbproject
 web/bundles/*
-app/bootstrap*
+app/bootstrap.php.cache
+app/bootstrap_cache.php.cache

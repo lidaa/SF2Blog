@@ -1,8 +1,9 @@
 <ul>
-<?php foreach($blogrolls as $blogroll): ?>
+<?php
+foreach($blogrolls as $blogroll): ?>
 	<li>
-		<a href="<?php echo $blogroll->getlink() ?>">
-		<?php echo $blogroll->getlink(); ?>
+		<a href="<?php echo $blogroll['id'] ?>">
+			<?php echo $blogroll['link']; ?>
 		</a>
 	</li>
 <?php endforeach; ?>
