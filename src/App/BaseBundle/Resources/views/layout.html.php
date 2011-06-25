@@ -15,10 +15,13 @@
 				<?php if ($view['security']->isGranted('ROLE_ADMIN')): ?>
 					<a href="<?php echo $view['router']->generate('sonata_admin_dashboard') ?>">Admin</a>
 				<?php endif; ?>
-				
-				<a href="<?php echo $view['router']->generate('_security_login') ?>"> Connexion</a>
-
-				<a href="<?php echo "#" ?>"> Inscription</a>	
+				<?php if ($view['security']->isGranted('ROLE_USER')): ?>
+					<?php //$view->getUser() ?>
+					<a href="<?php echo $view['router']->generate('logout') ?>"> Déconnexion</a>
+				<?php else : ?>
+					<a href="<?php echo $view['router']->generate('_security_login') ?>"> Connexion</a>
+					<a href="<?php echo "#" ?>"> Inscription</a>
+				<?php endif; ?>	
 			</div>
         </div>
         <div class="header"></div>

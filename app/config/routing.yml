@@ -22,6 +22,9 @@ _app_base:
 login_check:
     pattern:   /login_check
 
+logout:
+    pattern:   /logout
+
 # ADMIN BUNDLE
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
