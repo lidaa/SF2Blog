@@ -17,6 +17,18 @@
 		echo $post->getContent();
 	?>
 	</div>
+
+	<div class="post_comments">
+		<?php if(count($post->getComments()) != 0): ?>
+			<?php foreach ($post->getComments() as $comment): ?>
+				<?php echo $comment->getContent() ?>
+			<?php endforeach; ?>
+		<?php else: ?>
+			<div class="msg_warning">
+				Pas de commentaire !!
+			</div>
+		<?php endif; ?>
+	</div>
 </div>
 
 <?php $view['slots']->stop(); ?>

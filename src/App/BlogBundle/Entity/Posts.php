@@ -74,6 +74,13 @@ class Posts
     private $category;
 
     /**
+     * @var $Comments
+     *
+     * @ORM\OneToMany(targetEntity="Comments", mappedBy="post")
+     */
+	private $comments;
+
+    /**
      * Get id
      *
      * @return integer $id
@@ -222,7 +229,17 @@ class Posts
     {
         return $this->category;
     }
-    
+
+    /**
+     * Get comments
+     *
+     * @return Collection $comments
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
     public function __toString()
     {
         return $this->getTitle();
