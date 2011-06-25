@@ -28,21 +28,8 @@ class PostController extends Controller
 	*/
     public function showAction($id) 
 	{
-		 
 		$post = $this->getEm()->find('AppBlogBundle:Posts', $id);
         return $this->render('AppBlogBundle:Post:show.html.php', array('post' => $post));
-    }
- 
-    public function editAction() {
-        return $this->render('AppBlogBundle:Post:edit.html.php', array('' => ''));
-    }
- 
-    public function addAction() {
-        return $this->render('AppBlogBundle:Post:add.html.php', array('' => ''));
-    }
- 
-    public function deleteAction() {
-        return $this->render('AppBlogBundle:Post:delete.html.php', array('' => ''));
     }
 
 }

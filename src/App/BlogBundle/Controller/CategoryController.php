@@ -7,23 +7,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
 
 class CategoryController extends Controller
 {
-
- 	/**
-	* @Route("/category/add",  name="_category_add")
-	* @Template()
-	*/  
-    public function addAction() {
-        return $this->render('AppBlogBundle:Category:add.html.php', array('' => ''));
-    }
- 
- 	/**
-	* @Route("/category/{id}/edit",  name="_category_edit")
-	* @Template()
-	*/  
-    public function editAction() {
-        return $this->render('AppBlogBundle:Category:edit.html.php', array('' => ''));
-    }
-
  	/**
 	* @Route("/all-categories",  name="_category_all")
 	* @Template()
@@ -51,14 +34,6 @@ class CategoryController extends Controller
     public function selectAction($title) {
 		$category  = $this->getEm()->getRepository('AppBlogBundle:Categories')->findOneByTitle($title);
         return $this->render('AppBlogBundle:Category:select.html.php', array('posts' => $category->getPosts(), 'category' => $category));
-    }
-
- 	/**
-	* @Route("/category/delete/{id} ",  name="_category_delete")
-	* @Template()
-	*/ 
-    public function deleteAction($id) {
-        return $this->render('AppBlogBundle:Category:delete.html.php', array('id' => $id));
     }
 
 }
