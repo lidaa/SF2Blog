@@ -11,17 +11,15 @@
     <div class="container">
         <div class="top">
             <a href="<?php echo $view['router']->generate('_home_index') ?>"><span>Lidaa blog</span></a>
-            <?php if ($view['security']->isGranted('IS_AUTHENTICATED_REMEMBERED')): ?>
-                <a href="<?php echo $view['router']->generate('fos_user_security_logout') ?>">
-                    Déconnexion
-                    <?php $this->get('translator')->trans('layout.logout',array(),'FOSUserBundle'); ?>
-                </a>
-           <?php else: ?>
-               <a href="<?php echo $view['router']->generate('fos_user_security_login') ?>">
-                   Connexion
-                    <?php $this->get('translator')->trans('layout.login',array(),'FOSUserBundle'); ?>
-               </a>
-           <?php endif; ?>
+			<div class="auth">
+				<?php if ($view['security']->isGranted('ROLE_ADMIN')): ?>
+					<a href="<?php echo $view['router']->generate('sonata_admin_dashboard') ?>">Admin</a>
+				<?php endif; ?>
+				
+				<a href="<?php echo $view['router']->generate('_security_login') ?>"> Connexion</a>
+
+				<a href="<?php echo "#" ?>"> Inscription</a>	
+			</div>
         </div>
         <div class="header"></div>
         <div class="clearer"><span></span></div>

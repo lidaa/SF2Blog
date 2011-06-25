@@ -2,9 +2,9 @@
 
 namespace App\BlogBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use App\BaseBundle\Controller\BaseController as Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
+	Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
+	App\BaseBundle\Controller\BaseController as Controller;
 
 class HomeController extends Controller
 {

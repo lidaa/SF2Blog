@@ -15,6 +15,12 @@ _app_blog_blogroll:
     resource: "@AppBlogBundle/Controller/BlogrollController.php"
     type:     annotation
 
+_app_base:
+    resource: "@AppBaseBundle/Controller/"
+    type:     annotation
+
+login_check:
+    pattern:   /login_check
 
 # ADMIN BUNDLE
 admin:

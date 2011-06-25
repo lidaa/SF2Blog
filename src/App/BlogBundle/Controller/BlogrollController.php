@@ -18,13 +18,8 @@ class BlogrollController extends Controller
 		if($category == null)
 		{
 			$blogrolls = $this->getEm()
-			  ->createQuery('SELECT b.id, b.link FROM AppBlogBundle:Blogroll b ORDER BY b.link')
-			  ->setMaxResults(4)
+			  ->createQuery('SELECT b FROM AppBlogBundle:Blogroll b ORDER BY b.link')
 			  ->execute();
-			
-			//print_r( $blogrolls );
-			//exit;
-			
 		}	
 		else
 		{
@@ -34,18 +29,6 @@ class BlogrollController extends Controller
 		}
 		
         return $this->render('AppBlogBundle:Blogroll:list.html.php', array('blogrolls' => $blogrolls));
-    }
- 
-    public function addAction() {
-        return $this->render('AppBlogBundle:Blogroll:add.html.php', array('' => ''));
-    }
- 
-    public function deleteAction() {
-        return $this->render('AppBlogBundle:Blogroll:delete.html.php', array('' => ''));
-    }
- 
-    public function editAction() {
-        return $this->render('AppBlogBundle:Blogroll:edit.html.php', array('' => ''));
     }
  
     public function allAction() {

@@ -62,7 +62,7 @@ h1,h2,h3 {color: #654;}
 /* head */
 .top{
 	background: #567300;
-	font: normal 32px Georgia;
+	font: normal Georgia;
     height: 23px;
     margin: 0 auto;
     width: 758px;
@@ -74,6 +74,7 @@ h1,h2,h3 {color: #654;}
 	text-decoration: none;
 	width: 100%;
 	margin-right: 65px; 
+	font-size: 32px;
 }
 .top span {padding: 10px;}
 .top a:hover {
@@ -215,4 +216,15 @@ h1,h2,h3 {color: #654;}
     color: #D8000C;
     background-color: #FFBABA;
     background-image: url('../img/error.png');
+}
+
+/* authentification */
+.auth{
+	float: left;
+	margin-left: 2px;
+}
+.auth a{
+	font-size: 14px;
+	line-height: 12px;
+	margin-right: 2px;
 }
