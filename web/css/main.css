@@ -228,3 +228,22 @@ h1,h2,h3 {color: #654;}
 	line-height: 12px;
 	margin-right: 2px;
 }
+
+/* login form */
+#login-form{
+	background: none repeat scroll 0 0 #E8F6BF;
+    border: 2px solid green;
+    margin-top: 2px;
+    padding: 15px 10px 33px 40px;
+}
+
+.form-row{
+	margin-bottom: 10px;
+    width: 100%;
+}
+
+#form-submit  {
+	border: medium none;
+    cursor: pointer;
+    float: right;
+}
