@@ -1,4 +1,4 @@
-<?php $view->extend('AppBaseBundle::layout.html.php'); ?>
+﻿<?php $view->extend('AppBaseBundle::layout.html.php'); ?>
 
 <?php $view['slots']->start('content'); ?> 
 
@@ -25,10 +25,18 @@
 			<?php endforeach; ?>
 		<?php else: ?>
 			<div class="msg_warning">
-				Pas de commentaire !!
+				Soyer le premier à commenter cet article
 			</div>
 		<?php endif; ?>
 	</div>
+
+	<div class="form comment">
+		<form action="" method="post" >
+			<?php echo $view['form']->widget($form) ?>
+			<input type="submit" />
+		</form>
+	</div>
+
 </div>
 
 <?php $view['slots']->stop(); ?>

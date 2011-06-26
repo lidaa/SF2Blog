@@ -20,7 +20,7 @@
 					<a href="<?php echo $view['router']->generate('logout') ?>"> Déconnexion</a>
 				<?php else : ?>
 					<a href="<?php echo $view['router']->generate('_security_login') ?>"> Connexion</a>
-					<a href="<?php echo "#" ?>"> Inscription</a>
+					<a href="<?php echo $view['router']->generate('_user_new') ?>"> Inscription</a>
 				<?php endif; ?>	
 			</div>
         </div>

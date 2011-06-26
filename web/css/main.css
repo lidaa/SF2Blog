@@ -131,6 +131,16 @@ h1,h2,h3 {color: #654;}
     margin-bottom: 15px; 
 }
 
+.post_comments{
+    border-bottom: 2px solid green;
+    margin: 20px 0;
+}
+
+.form_comments{
+    margin: 20px 0;
+}
+
+
 /* main */
 .content {float: left; width: 600px;}
 
@@ -246,4 +256,21 @@ h1,h2,h3 {color: #654;}
 	border: medium none;
     cursor: pointer;
     float: right;
+}
+
+/* Formulaire */
+.form
+{
+	padding: 10px;
+}
+.form input
+{
+	float: none;
+	width: 100%;
+}
+.form textarea
+{
+    float: none;
+    height: 150px;
+    width: 100%;
 }

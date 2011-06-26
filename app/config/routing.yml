@@ -1,31 +1,21 @@
 
-_app_blog_home:
-    resource: "@AppBlogBundle/Controller/HomeController.php"
-    type:     annotation
-
-_app_blog_post:
-    resource: "@AppBlogBundle/Controller/PostController.php"
-    type:     annotation
-
-_app_blog_category:
-    resource: "@AppBlogBundle/Controller/CategoryController.php"
-    type:     annotation
-
-_app_blog_blogroll:
-    resource: "@AppBlogBundle/Controller/BlogrollController.php"
+# MYAPP
+_app_blog:
+    resource: "@AppBlogBundle/Controller/"
     type:     annotation
 
 _app_base:
     resource: "@AppBaseBundle/Controller/"
     type:     annotation
 
+# AUTH
 login_check:
     pattern:   /login_check
 
 logout:
     pattern:   /logout
 
-# ADMIN BUNDLE
+# ADMIN
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
