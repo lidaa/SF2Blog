@@ -1,6 +1,9 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
 
+[symfony]
+    git=http://github.com/symfony/symfony.git
+
 [twig]
     git=http://github.com/fabpot/Twig.git
 
@@ -9,15 +12,12 @@
 
 [doctrine-common]
     git=http://github.com/doctrine/common.git
-    version=origin/3.0.x
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
-    version=origin/2.0.5
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=origin/2.0.x
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
@@ -32,6 +32,9 @@
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
 
+[zend]
+    git=https://github.com/zendframework/zf2.git
+
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
     target=/bundles/Sensio/Bundle/FrameworkExtraBundle
@@ -40,9 +43,13 @@
     git=http://github.com/schmittjoh/SecurityExtraBundle.git
     target=/bundles/JMS/SecurityExtraBundle
 
-[WebConfiguratorBundle]
-    git=http://github.com/symfony/WebConfiguratorBundle.git
-    target=/bundles/Symfony/Bundle/WebConfiguratorBundle
+[SensioDistributionBundle]
+    git=http://github.com/sensio/SensioDistributionBundle.git
+    target=/bundles/Sensio/Bundle/DistributionBundle
+
+[SensioGeneratorBundle]
+    git=http://github.com/sensio/SensioGeneratorBundle.git
+    target=/bundles/Sensio/Bundle/GeneratorBundle
 
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
@@ -70,4 +77,10 @@
 [MenuBundle]
     git=http://github.com/sonata-project/MenuBundle.git
     target=/bundles/Knplabs/Bundle/MenuBundle
+
+[LidaaSearchBundle]
+    git=https://github.com/lidaa/LidaaSearchBundle.git
+    target=/bundles/Lidaa/SearchBundle
+
+
 
