@@ -12,19 +12,24 @@
         <div class="top">
             <a href="<?php echo $view['router']->generate('_home_index') ?>"><span>Lidaa blog</span></a>
 			<div class="auth">
-				<?php if ($view['security']->isGranted('ROLE_ADMIN')): ?>
-					<a href="<?php echo $view['router']->generate('sonata_admin_dashboard') ?>">Admin</a>
-				<?php endif; ?>
 				<?php if ($view['security']->isGranted('ROLE_USER')): ?>
-					<?php //$view->getUser() ?>
-					<a href="<?php echo $view['router']->generate('logout') ?>"> Déconnexion</a>
+					Conntecté en tant que <?php echo $app->getUser()->getUsername() ?>;
 				<?php else : ?>
 					<a href="<?php echo $view['router']->generate('_security_login') ?>"> Connexion</a>
 					<a href="<?php echo $view['router']->generate('_user_new') ?>"> Inscription</a>
 				<?php endif; ?>	
 			</div>
         </div>
-        <div class="header"></div>
+        <div class="header">
+			<div class="auth">
+				<?php if ($view['security']->isGranted('ROLE_USER')): ?>
+					<a href="<?php echo $view['router']->generate('logout') ?>"> Déconnexion</a>
+					<?php if ($view['security']->isGranted('ROLE_ADMIN')) { ?>
+					<a href="<?php echo $view['router']->generate('sonata_admin_dashboard') ?>"> Admin</a>
+					<?php } ?>
+				<?php endif; ?>	
+			</div>
+        </div>
         <div class="clearer"><span></span></div>
         <div class="main">
             <div class="content">
