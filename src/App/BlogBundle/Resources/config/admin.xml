@@ -25,6 +25,8 @@
         <parameter key="admin.comment.class">App\BlogBundle\Admin\CommentAdmin</parameter>
         <parameter key="admin.comment.entity">App\BlogBundle\Entity\Comments</parameter>
         <parameter key="admin.comment.controller">AppBlogBundle:CommentAdmin</parameter>
+
+        <parameter key="sonata.admin.templates.layout">AppBlogBundle::admin_layout.html.twig</parameter>
             
     </parameters>
 
