@@ -3,14 +3,19 @@ security:
 
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        App\BlogBundle\Entity\Users: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
 
     providers:
+        chain_provider:
+            providers: [in_memory, users_db]
         in_memory:
             users:
                 lidaa: { password: lidaa, roles: 'ROLE_ADMIN' }
+        users_db:
+            entity: { class: App\BlogBundle\Entity\Users, property: username }
 
     firewalls:
         secured_area:
