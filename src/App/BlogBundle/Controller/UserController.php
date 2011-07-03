@@ -2,11 +2,11 @@
 
 namespace App\BlogBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use App\BaseBundle\Controller\BaseController as Controller;
-use App\BlogBundle\Entity\Comments;
-use App\BlogBundle\Entity\Users;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
+	Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
+	App\BaseBundle\Controller\BaseController as Controller,
+	App\BlogBundle\Entity\Comments,
+	App\BlogBundle\Entity\Users;
 
 class UserController extends Controller
 {
@@ -18,7 +18,7 @@ class UserController extends Controller
     public function newAction() 
 	{
 		$user = new Users();
-		$em = $this->getEm();
+		$em = $this->getEntityM();
 		$form = $this->createFormBuilder($user)
             ->add('username', 'text')
             ->add('password', 'text')
@@ -30,10 +30,12 @@ class UserController extends Controller
             ->getForm();
 
 		$request = $this->get('request');
-		if ($request->getMethod() == 'POST') {
+		if ($request->getMethod() == 'POST') 
+		{
 			$form->bindRequest($request);
-			if ($form->isValid()) {
-				$user->setCreatedAt(new \DateTime());
+			if ($form->isValid()) 
+			{
+				$this->encodePassword($user);
 				$em->persist($user);
 				$em->flush();
 				return $this->redirect($this->generateUrl('_home_index'));
