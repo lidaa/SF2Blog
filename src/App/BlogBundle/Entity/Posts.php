@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="posts")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class Posts
 {
@@ -240,6 +241,15 @@ class Posts
         return $this->comments;
     }
 
+	/**
+	 * @ORM\prePersist
+	 */
+	public function onPrePersist()
+	{   
+		$this->setNumberVivits(22);
+        $this->setCreatedAt(new \DateTime());
+	}
+	
     public function __toString()
     {
         return $this->getTitle();
