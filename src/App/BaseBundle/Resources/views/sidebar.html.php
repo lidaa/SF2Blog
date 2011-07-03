@@ -30,3 +30,10 @@
 <?php endif; ?>
 <h1>Articles recents</h1>
 <?php echo $view['actions']->render('AppBlogBundle:Post:recent') ?>
+<h1>Recherche</h1>
+<div class="form search">
+	<form action="" method="GET">
+		<span></span> 
+		<input type="search" placeholder="" name="query">
+	</form>
+</div>
