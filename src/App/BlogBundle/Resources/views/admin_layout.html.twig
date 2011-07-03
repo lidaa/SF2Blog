@@ -1,0 +1,165 @@
+{#
+
+This file is part of the Sonata package.
+
+(c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        {% block stylesheets %}
+            <!-- jQuery code -->
+            <link rel="stylesheet" href="{{ asset('bundles/sonatajquery/themes/flick/jquery-ui-1.8.6.custom.css') }}" type="text/css" media="all" />
+
+            <!-- blueprint code -->
+            <link rel="stylesheet" href="{{ asset('bundles/sonatablueprint/screen.css') }}" type="text/css" media="screen, projection">
+            <link rel="stylesheet" href="{{ asset('bundles/sonatablueprint/print.css') }}" type="text/css" media="print">
+            <!--[if lt IE 8]><link rel="stylesheet" href="{{ asset('bundles/sonatablueprint/ie.css') }}" type="text/css" media="screen, projection"><![endif]-->
+
+            <!-- base application asset -->
+            <link rel="stylesheet" href="{{ asset('bundles/sonataadmin/css/layout.css') }}" type="text/css" media="all">
+            <link rel="stylesheet" href="{{ asset('bundles/sonataadmin/css/colors.css') }}" type="text/css" media="all">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('bundles/sonatajquery/jquery-1.4.4.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/sonatajquery/jquery-ui-1.8.6.custom.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/sonatajquery/jquery-ui-i18n.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/sonataadmin/qtip/jquery.qtip-1.0.0-rc3.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/sonataadmin/jquery/jquery.form.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/sonataadmin/base.js') }}" type="text/javascript"></script>
+        {% endblock %}
+
+        <title>
+            {% block title %} {% trans from 'SonataAdminBundle' %}Admin{% endtrans %}
+                {% if action is defined %}
+                    -
+                    {% for label, uri in admin.breadcrumbs(action) %}
+                        {% if not loop.first  %}
+                            &gt;
+                        {% endif %}
+                        {{ label }}
+                    {% endfor %}
+                {% endif %}
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+
+        {# initialize block value #}
+        {% set preview      = block('preview') %}
+        {% set form         = block('form') %}
+        {% set view         = block('view') %}
+        {% set list_table   = block('list_table') %}
+        {% set list_filters = block('list_filters') %}
+        {% set side_menu    = block('side_menu') %}
+        {% set content      = block('content') %}
+
+
+        <div class="container">
+            <div class="span-24 last header">
+                <div class="span-20">
+                    <a href="{{ url('sonata_admin_dashboard') }}" class="home">{% trans from 'SonataAdminBundle' %}Admin{% endtrans %}</a>
+                    <span style="font-size: 30px;"> || </span> 
+                    <a href="{{ url('_home_index') }}" class="home">Blog</a>
+                </div>
+
+                <div class="span-4 last">
+                    {% block user_panel %}
+						<a href="{{ path('logout') }}"><span style="color:white;text-decoration:underline;">Déconnexion</span></a>
+                    	<br />
+                    	Add here user options
+                    {% endblock %}
+                </div>
+            </div>
+
+            <div class="span-24 last content clear">
+                <div class="right">
+                    {% block actions %}{% endblock %}
+                </div>
+
+                <div class="sonata-ba-breadcrumbs">
+                    <h1>
+                    {% block breadcrumb %}
+                        {% if action is defined %}
+                            {% for label, uri in admin.breadcrumbs(action) %}
+                                {% if not loop.first  %}
+                                    &gt;
+                                {% endif %}
+                                <a href="{{ uri }}">{{ label }}</a>
+                            {% endfor %}
+                        {% endif %}
+                    {% endblock %}
+                    </h1>
+                </div>
+            </div>
+
+            {% if preview is not empty %}
+                <div class="span-24 last content clear">
+                    <div class="sonata-ba-preview">{{ preview|raw }}</div>
+                </div>
+            {% endif %}
+
+            <div class="span-24 last content clear">
+
+                {% if side_menu is not empty %}
+                        <div class="span-4">
+                            <div class="sonata-ba-side-menu">{{ side_menu|raw }}</div>
+                        </div>
+                        <div class="span-18 last content">
+                {% endif %}
+
+                    {% if content is not empty %}
+                        <div class="sonata-ba-content">{{ content|raw }}</div>
+                    {% endif %}
+
+                    {% if view is not empty %}
+                        <div class="sonata-ba-view">{{ view|raw }}</div>
+                    {% endif %}
+
+                    {% if form is not empty %}
+                        <div class="sonata-ba-form">{{ form|raw }}</div>
+                    {% endif %}
+
+                    {% if list_table is not empty or list_filters is not empty %}
+                        {% if side_menu is not empty %}
+                            <div class="sonata-ba-list">
+                                <div class="span-13">
+                                    {{ list_table|raw }}
+                                </div>
+                                <div class="span-5 last">
+                                    {{ list_filters|raw }}
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="sonata-ba-list">
+                                <div class="span-19">
+                                    {{ list_table|raw }}
+                                </div>
+                                <div class="span-5 last">
+                                    {{ list_filters|raw }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+
+                {% if side_menu is not empty %}
+                    </div>
+                {% endif %}
+
+            </div>
+
+            <!-- footer -->
+            <div class="span-24 last">
+                {% block footer %}{% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
+

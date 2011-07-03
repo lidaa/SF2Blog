@@ -17,13 +17,13 @@ class BlogrollController extends Controller
 		
 		if($category == null)
 		{
-			$blogrolls = $this->getEm()
+			$blogrolls = $this->getEntityM()
 			  ->createQuery('SELECT b FROM AppBlogBundle:Blogroll b ORDER BY b.link')
 			  ->execute();
 		}	
 		else
 		{
-			$blogrolls = $this->getEm()
+			$blogrolls = $this->getEntityM()
 			  ->createQuery('SELECT c FROM AppBlogBundle:Categories c WHERE c.showed = 1')
 			  ->execute();
 		}

@@ -2,8 +2,8 @@
 
 namespace App\BaseBundle\Templating\Helper;
 
-use Symfony\Component\Templating\Helper\Helper;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Templating\Helper\Helper,
+	Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * DateHelper provides methods managing objects of Date and DateTime.

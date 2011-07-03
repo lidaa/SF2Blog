@@ -1,8 +1,9 @@
 <?php
 namespace App\BlogBundle\Admin;
 
-use Sonata\AdminBundle\Admin\Admin;
-use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Admin\Admin,
+	Sonata\AdminBundle\Datagrid\ListMapper,
+	Sonata\AdminBundle\Form\FormMapper;
 
 class PostAdmin extends Admin
 {
@@ -18,16 +19,21 @@ class PostAdmin extends Admin
         ),
     );
 
-    protected $form = array(
-        'title',
-        'content',
-        'opened'
-    );
+
     
     protected $filter = array(
         'title',
         'opened',
         'numberVivits',
     );
-}
 
+    protected $form = array(
+        'title',
+        'content' => array(
+					'form_field_options' => array('required' => false), 
+					'template' =>'AppBlogBundle:Post:field_content.html.twig'),
+        'opened'
+    );
+
+    
+}

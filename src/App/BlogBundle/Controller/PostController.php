@@ -2,11 +2,11 @@
 
 namespace App\BlogBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use App\BaseBundle\Controller\BaseController as Controller;
-use App\BlogBundle\Entity\Comments;
-use App\BlogBundle\Entity\Users;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route,
+	Sensio\Bundle\FrameworkExtraBundle\Configuration\Template,
+	App\BaseBundle\Controller\BaseController as Controller,
+	App\BlogBundle\Entity\Comments,
+	App\BlogBundle\Entity\Users;
 
 class PostController extends Controller
 {
@@ -17,7 +17,7 @@ class PostController extends Controller
 	*/
     public function recentAction() 
 	{
-		$posts = $this->getEm()
+		$posts = $this->getEntityM()
 					  ->createQuery('SELECT p FROM AppBlogBundle:Posts p ORDER BY p.createdAt DESC')
 					  ->setMaxResults(4)	
 					  ->execute();
@@ -30,22 +30,28 @@ class PostController extends Controller
 	*/
     public function showAction($id) 
 	{
+	
+		//echo $this->getUser()->isGranted();
+		//echo  $user = $this->get('security.context')->getToken()->getUser();
 		$comment = new Comments();
+		//$comment->setUser();
+		
 		$form = $this->createFormBuilder($comment)
-            ->add('user', 'text')
-            ->add('content', 'textarea')
+            ->add('user', 'text', array(
+            						'label' => 'Vous :', 
+        							'read_only' => 'readOnly')
+				)
+            ->add('content', 'textarea' , array(
+            						'label' => 'Votre commentaire :')
+				)
             ->getForm();
-		$post = $this->getEm()->find('AppBlogBundle:Posts', $id);
+		$post = $this->getEntityM()->find('AppBlogBundle:Posts', $id);
 		
 
 		$request = $this->get('request');
 		if ($request->getMethod() == 'POST') {
 			$form->bindRequest($request);
 			if ($form->isValid()) {
-				// perform some action, such as save the object to the database
-				//$comment->setCreatedAt(new \DateTime());
-				//$comment->setCreatedAt(new \DateTime());
-	
 				$em->persist($comment);
 				$em->flush();
 				return $this->redirect($this->generateUrl('_post_show'));

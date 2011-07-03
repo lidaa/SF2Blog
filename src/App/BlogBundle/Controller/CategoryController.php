@@ -20,7 +20,7 @@ class CategoryController extends Controller
 	* @Template()
 	*/ 
     public function listAction() {
-		$categories = $this->getEm()
+		$categories = $this->getEntityM()
 					  ->createQuery('SELECT c FROM AppBlogBundle:Categories c WHERE c.showed = 1')
 					  ->execute();
         return $this->render('AppBlogBundle:Category:list.html.php', array('categories' => $categories));
@@ -32,7 +32,7 @@ class CategoryController extends Controller
 	* @Template()
 	*/ 
     public function selectAction($title) {
-		$category  = $this->getEm()->getRepository('AppBlogBundle:Categories')->findOneByTitle($title);
+		$category  = $this->getEntityM()->getRepository('AppBlogBundle:Categories')->findOneByTitle($title);
         return $this->render('AppBlogBundle:Category:select.html.php', array('posts' => $category->getPosts(), 'category' => $category));
     }
 
