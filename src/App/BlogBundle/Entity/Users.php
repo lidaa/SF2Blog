@@ -3,14 +3,17 @@
 namespace App\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
+
 
 /**
  * App\BlogBundle\Entity\Users
- *
  * @ORM\Table(name="users")
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
-class Users
+class Users implements UserInterface
 {
     /**
      * @var integer $id
@@ -382,4 +385,43 @@ class Users
        return $this->updatedAt;
    }
 
+
+	/*  */
+   public function getRoles(){
+   		return array('ROLE_USER');
+   }  
+   public function getSalt(){
+   		return 3;
+   }
+   public function equals(UserInterface $account) {
+        if ($account->getUsername() != $this->getUsername()) { 
+            return false;
+        }
+        return true; 
+    } 
+    public function eraseCredentials(){
+        return false;
+    }
+	/* */
+
+
+	
+	/**
+	 * @ORM\prePersist
+	 */
+	public function onPrePersist()
+	{   
+		$this->setNumberVisits(0);
+        $this->setCreatedAt(new \DateTime());
+		$this->setBanished(0);
+	}
+	/**
+	 * @ORM\preUpdate
+	 */
+	public function onePreUpdate()
+	{
+		$this->setUpdatedAt(new \DateTime());
+	}
+    
+    
 }
