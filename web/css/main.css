@@ -232,11 +232,15 @@ h1,h2,h3 {color: #654;}
 .auth{
 	float: left;
 	margin-left: 2px;
+	font-size: 12px;
+	color: #E8F6BF;
 }
 .auth a{
 	font-size: 14px;
 	line-height: 12px;
 	margin-right: 2px;
+	color: #000000;
+	font-weight: bold;
 }
 
 /* login form */
@@ -256,6 +260,8 @@ h1,h2,h3 {color: #654;}
 	border: medium none;
     cursor: pointer;
     float: right;
+	background: none repeat scroll 0 0 transparent;
+	text-decoration: underline;
 }
 
 /* Formulaire */
@@ -273,4 +279,24 @@ h1,h2,h3 {color: #654;}
     float: none;
     height: 150px;
     width: 100%;
+}
+
+.search{
+    background: url("../img/bgnavigation.gif") #E8F6BF;
+    border: 1px solid #D5E8AD;
+    height: 30px;
+}
+
+.search span
+{
+    background: url("../img/search.png") scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 16px;
+    width: 16px;
+}    
+.search input
+{
+	float: left;
+	width: 80%;
 }
