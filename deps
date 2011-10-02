@@ -1,51 +1,55 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
-
-[symfony]
-    git=http://github.com/symfony/symfony.git
+    version=v2.0.3
 
 [twig]
     git=http://github.com/fabpot/Twig.git
+    version=v1.1.2
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
+    version=1.0.1
 
 [doctrine-common]
     git=http://github.com/doctrine/common.git
+    version=2.1.1
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
+    version=2.1.2
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
+    version=2.1.1
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
-    version=origin/4.1
+    version=v4.1.2
 
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
+    version=v1.0.2
 
 [twig-extensions]
     git=http://github.com/fabpot/Twig-extensions.git
 
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
-
-[zend]
-    git=https://github.com/zendframework/zf2.git
+    version=1.0.0
 
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
     target=/bundles/Sensio/Bundle/FrameworkExtraBundle
 
 [JMSSecurityExtraBundle]
-    git=http://github.com/schmittjoh/SecurityExtraBundle.git
+    git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
     target=/bundles/JMS/SecurityExtraBundle
+    version=origin/1.0.x
 
 [SensioDistributionBundle]
     git=http://github.com/sensio/SensioDistributionBundle.git
     target=/bundles/Sensio/Bundle/DistributionBundle
+    version=origin/1.0
 
 [SensioGeneratorBundle]
     git=http://github.com/sensio/SensioGeneratorBundle.git
@@ -54,28 +58,25 @@
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
+    version=v1.0.1
 
-[doctrine-fixtures]
-    git=http://github.com/doctrine/data-fixtures.git
-
-[DoctrineFixturesBundle]
-    git=http://github.com/symfony/DoctrineFixturesBundle.git
-    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+[zend]
+    git=https://github.com/zendframework/zf2.git
 
 [SonataAdminBundle]
-    git=http://github.com/sonata-project/AdminBundle.git
+    git=https://github.com/sonata-project/SonataAdminBundle.git
     target=/bundles/Sonata/AdminBundle
 
 [jQueryBundle]
-    git=http://github.com/sonata-project/jQueryBundle.git
+    git=https://github.com/sonata-project/SonatajQueryBundle.git
     target=/bundles/Sonata/jQueryBundle
 
 [BluePrintBundle]
-    git=http://github.com/sonata-project/BluePrintBundle.git
+    git=https://github.com/sonata-project/SonataBluePrintBundle.git
     target=/bundles/Sonata/BluePrintBundle
 
 [MenuBundle]
-    git=http://github.com/sonata-project/MenuBundle.git
+    git=https://github.com/knplabs/KnpMenuBundle.git
     target=/bundles/Knplabs/Bundle/MenuBundle
 
 [LidaaSearchBundle]
