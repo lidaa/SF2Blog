@@ -59,5 +59,15 @@ Load data fixtures
 
     php app/console doctrine:fixtures:load
 
-Fin.
-Enjoy!
+Usage
+-------
+
+Load home page in your browser : http://localhost/SF2Blog/web/app_dev.php/
+
+Load admin page in your browser : http://localhost/SF2Blog/web/app_dev.php/admin/dashboard (login=lidaa,pwd=lidaa)
+
+
+Fin. 
+-----
+
+Enjoy! :)
