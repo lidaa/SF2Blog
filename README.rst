@@ -21,9 +21,12 @@ distribution. If you still want to use Git, your are on your own.
 
 Run the following commands:
 
-    git clone https://github.com/lidaa/SF2Blog.git
-    cd SF2Blog
-    php bin/vendors install
+    git clone https://github.com/lidaa/SF2Blog.git 
+
+    cd SF2Blog 
+
+    php bin/vendors install 
+
 
 Configuration
 -------------
@@ -41,12 +44,15 @@ Run
 permission
 
     sudo chmod -R 777 app/cache
+
     sudo chmod -R 777 app/logs
 
 Create database and tables
 
     php app/console doctrine:database:drop --force
+
     php app/console doctrine:database:create
+
     php app/console doctrine:schema:create
 
 Load data fixtures
