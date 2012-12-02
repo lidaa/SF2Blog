@@ -6,10 +6,12 @@ use Doctrine\Common\DataFixtures\AbstractFixture,
     Doctrine\Common\DataFixtures\OrderedFixtureInterface,
     App\BlogBundle\Entity\Blogroll;
 
+use Doctrine\Common\Persistence\ObjectManager;
+
 class BlogrollData extends AbstractFixture implements OrderedFixtureInterface  
 {
 
-    public function load($manager) 
+    public function load(ObjectManager $manager) 
 	{
 
 		$list_links_sf = array

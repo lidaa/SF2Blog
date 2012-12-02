@@ -3,43 +3,32 @@ namespace App\BlogBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\FormMapper;
 
 class UserAdmin extends Admin
 {
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper
+            ->addIdentifier('email')
+            ->add('username')
+            ->add('fullName')
+            ->add('lastConnection')
+            ->add('numberVisits')
+            ->add('enabled')
+            ->add('banished')
+            ->add('createdAt')
+            ->add('_action', 'actions', array('actions' => array('delete' => array(), 'edit' => array())));
+    }
 
-    protected $list = array(
-        'email' => array('identifier' => true),
-        'username',
-        'fullName',
-        'lastConnection',
-        'numberVisits',
-        'enabled',
-        'banished',
-        '_action' => array(
-            'actions' => array(
-                'edit' => array(),
-                'delete' => array()
-            )  
-        )
-    );
-
-    protected $maxPerPage = 15;
-
-    protected $form = array(
-        'email',
-        'username',
-        'password',
-        'fullName',
-        'webSite',
-        'infos',
-    );
-
-    protected $filter = array(
-        'username',
-        'enabled',
-        'banished',
-        'numberVisits',
-    );
-
-    
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->add('email')
+            ->add('username')
+            ->add('password')
+            ->add('fullName')
+            ->add('webSite')
+            ->add('infos');
+    }
 }

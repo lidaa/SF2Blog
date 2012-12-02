@@ -6,10 +6,12 @@ use Doctrine\Common\DataFixtures\AbstractFixture,
     Doctrine\Common\DataFixtures\OrderedFixtureInterface,
     App\BlogBundle\Entity\Posts;
 
+use Doctrine\Common\Persistence\ObjectManager;
+
 class PostsData extends AbstractFixture implements OrderedFixtureInterface  
 {
 
-    public function load($manager) 
+    public function load(ObjectManager $manager) 
 	{
 
 		$post = new Posts();

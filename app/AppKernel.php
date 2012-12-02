@@ -9,7 +9,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(		
-			new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+	    new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
@@ -18,12 +18,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
 			
             // Bundles used
-            new Sonata\AdminBundle\SonataAdminBundle(),
-            new Sonata\BluePrintBundle\SonataBluePrintBundle(),
+            new Sonata\CacheBundle\SonataCacheBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
-            new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+
             // My bundles
             new App\BlogBundle\AppBlogBundle(),
             new App\BaseBundle\AppBaseBundle(),

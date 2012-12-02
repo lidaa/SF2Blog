@@ -15,8 +15,13 @@ $loader->registerNamespaces(array(
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'Sonata'           => __DIR__.'/../vendor/bundles',
-    'Knplabs'          => __DIR__.'/../vendor/bundles',
+    'Knp\Bundle'       => __DIR__.'/../vendor/bundles',
+    'Knp\Menu'         => __DIR__.'/../vendor/KnpMenu/src',
+    'Exporter'         => __DIR__.'/../vendor/Exporter/lib',
+    'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
+    'Doctrine\\Common' => __DIR__.'/../vendor/doctrine-common/lib',
 ));
+
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',

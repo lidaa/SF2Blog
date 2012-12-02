@@ -4,28 +4,25 @@ namespace App\BlogBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\FormMapper;
 
 class CategoryAdmin extends Admin
 {
-    protected $list = array(
-        'title' => array('identifier' => true),
-        'showed',
-        '_action' => array(
-            'actions' => array(
-                'delete' => array(),
-                'edit' => array(),
-            )
-        ),
-    );
 
-    protected $form = array(
-        'id',
-        'title',
-        'showed'
-    );
-
-    protected $filter = array(
-        'title'
-    );
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper
+            ->addIdentifier('title')
+            ->add('showed')
+            ->add('_action', 'actions', array('actions' => array('delete' => array(), 'edit' => array())));
+    }
+    
+    
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->add('title')
+            ->add('showed');
+    }
 }
 

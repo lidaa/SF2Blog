@@ -6,10 +6,12 @@ use Doctrine\Common\DataFixtures\AbstractFixture,
     Doctrine\Common\DataFixtures\OrderedFixtureInterface,
     App\BlogBundle\Entity\Categories;
 
+use Doctrine\Common\Persistence\ObjectManager;
+
 class CategoriesData extends AbstractFixture implements OrderedFixtureInterface  
 {
 
-    public function load($manager) 
+    public function load(ObjectManager $manager) 
 	{
 
 		$list_categories = array

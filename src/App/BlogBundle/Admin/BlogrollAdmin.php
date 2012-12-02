@@ -3,32 +3,26 @@ namespace App\BlogBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\FormMapper;
 
 class BlogrollAdmin extends Admin
 {
 
-    protected $list = array(
-        'link' => array('identifier' => true),
-        'category',
-        'createdAt',
-        '_action' => array(
-            'actions' => array(
-                'delete' => array(),
-                'edit' => array(),
-            )
-        ),
-    );
-
-    protected $maxPerPage = 15;
-
-    protected $form = array(
-        'link',
-        'category',
-    );
-
-    protected $filter = array(
-        'category'
-    );
-
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper
+            ->addIdentifier('link')
+            ->add('category')
+            ->add('createdAt')
+            ->add('_action', 'actions', array('actions' => array('delete' => array(), 'edit' => array())));
+    }
+    
+    
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->add('link')
+            ->add('category');
+    }
     
 }
